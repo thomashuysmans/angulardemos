@@ -1,0 +1,21 @@
+<p>
+    Pipes demo
+  </p>
+  
+  <p>Date of today is {{ dateOfToday }}</p>
+  
+  <p>Date of today is {{ dateOfToday | date }}</p>
+  <p>Date of today is {{ dateOfToday | date:"yyyy-MM-dd" }}</p>
+  <p>Date of today is {{ dateOfToday | date:'fullDate' }}</p>
+  <p>Date of today is {{ dateOfToday | date:'longDate' }}</p>
+  
+  
+  <p>Amount is {{ amount | currency:'EUR' }}</p>
+  <p>Amount is {{ amount | currency }}</p>
+  
+  
+
+  <!-- <div *ngFor="let contact of ('./contact.json' | contactsAsync )">
+    {{ contact.FirstName | contactFilter | lowercase | uppercase }}
+  </div> -->
+  
