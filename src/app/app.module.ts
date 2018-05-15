@@ -9,6 +9,7 @@ import { ComponentsDemoModule, routes as ComponentsRoutes } from './components/c
 import { BackendModule, routes as BackendRoutes } from './backend/backend.module';
 import { RoutingDemoModule, routes as RoutingDemoRoutes } from './routing/routingdemo.module';
 import { DiModule, routes as DiRoutes } from './DependencyInjection/di.module';
+import { ChangeDetectionModule, routes as ChangeDetectionRoutes } from './changedetection/changedetection.module';
 
 import { AppComponent } from './app.component';
 
@@ -21,7 +22,8 @@ const routes: Routes = [
   { path: 'componentdemo', children: ComponentsRoutes },
   { path: 'backenddemo', children: BackendRoutes },
   { path: 'routingdemo', children: RoutingDemoRoutes },
-  { path: 'didemo', children: DiRoutes }
+  { path: 'didemo', children: DiRoutes },
+  { path: 'changedetection', children: ChangeDetectionRoutes }
 ];
 
 @NgModule({
@@ -37,7 +39,8 @@ const routes: Routes = [
     ComponentsDemoModule,
     BackendModule,
     RoutingDemoModule,
-    DiModule
+    DiModule,
+    ChangeDetectionModule
   ],
   providers: [],
   bootstrap: [AppComponent]
