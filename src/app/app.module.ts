@@ -8,6 +8,8 @@ import { FormsDemoModule, routes as FormRoutes  } from './forms/formsdemo.module
 import { ComponentsDemoModule, routes as ComponentsRoutes } from './components/componentsdemo.module';
 import { BackendModule, routes as BackendRoutes } from './backend/backend.module';
 import { RoutingDemoModule, routes as RoutingDemoRoutes } from './routing/routingdemo.module';
+import { DiModule, routes as DiRoutes } from './DependencyInjection/di.module';
+
 import { AppComponent } from './app.component';
 
 
@@ -18,7 +20,8 @@ const routes: Routes = [
   { path: 'forms', children: FormRoutes},
   { path: 'componentdemo', children: ComponentsRoutes },
   { path: 'backenddemo', children: BackendRoutes },
-  { path: 'routingdemo', children: RoutingDemoRoutes }
+  { path: 'routingdemo', children: RoutingDemoRoutes },
+  { path: 'didemo', children: DiRoutes }
 ];
 
 @NgModule({
@@ -33,7 +36,8 @@ const routes: Routes = [
     FormsDemoModule,
     ComponentsDemoModule,
     BackendModule,
-    RoutingDemoModule
+    RoutingDemoModule,
+    DiModule
   ],
   providers: [],
   bootstrap: [AppComponent]
