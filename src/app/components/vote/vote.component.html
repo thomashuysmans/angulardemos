@@ -1,0 +1,4 @@
+
+<h1>Total votes: {{ totalVotes }}</h1>
+
+<person-list [persons]="persons" (onVote)="onVoted($event)" ></person-list>

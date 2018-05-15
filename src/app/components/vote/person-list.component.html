@@ -1,0 +1,7 @@
+<table>
+  <tr *ngFor="let person of persons">
+    <td>{{ person.Firstname }}</td>
+    <td>{{ person.Lastname }}</td>
+    <td><button (click)="doVote()" >Vote</button> </td>
+  </tr>
+</table>

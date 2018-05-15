@@ -2,17 +2,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Router, Routes } from '@angular/router';
 
-import { PipesModule, routes as PipesRoutes, PipesComponent } from './pipes/pipes.module';
-import { AdminModule, routes as AdminRoutes, AdminComponent } from './admin/admin.module';
- import { FormsDemoModule, routes as FormRoutes, FormsHomeComponent,  } from './forms/formsdemo.module';
+import { PipesModule, routes as PipesRoutes } from './pipes/pipes.module';
+import { AdminModule, routes as AdminRoutes } from './admin/admin.module';
+import { FormsDemoModule, routes as FormRoutes  } from './forms/formsdemo.module';
+import { ComponentsDemoModule, routes as ComponentsRoutes } from './components/componentsdemo.module';
 
 import { AppComponent } from './app.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'admin', pathMatch: 'full' },
-  { path: 'admin', component: AdminComponent, children: AdminRoutes },
-  { path: 'pipes', component: PipesComponent, children: PipesRoutes },
-  { path: 'forms', component: FormsHomeComponent, children: FormRoutes}
+  { path: 'admin', children: AdminRoutes },
+  { path: 'pipes', children: PipesRoutes },
+  { path: 'forms', children: FormRoutes},
+  { path: 'componentdemo', children: ComponentsRoutes }
 ];
 
 @NgModule({
@@ -24,7 +26,8 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     PipesModule,
     AdminModule,
-    FormsDemoModule
+    FormsDemoModule,
+    ComponentsDemoModule
   ],
   providers: [],
   bootstrap: [AppComponent]
