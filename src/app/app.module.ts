@@ -6,15 +6,19 @@ import { PipesModule, routes as PipesRoutes } from './pipes/pipes.module';
 import { AdminModule, routes as AdminRoutes } from './admin/admin.module';
 import { FormsDemoModule, routes as FormRoutes  } from './forms/formsdemo.module';
 import { ComponentsDemoModule, routes as ComponentsRoutes } from './components/componentsdemo.module';
-
+import { BackendModule, routes as BackendRoutes } from './backend/backend.module';
+import { RoutingDemoModule, routes as RoutingDemoRoutes } from './routing/routingdemo.module';
 import { AppComponent } from './app.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: 'admin', pathMatch: 'full' },
   { path: 'admin', children: AdminRoutes },
   { path: 'pipes', children: PipesRoutes },
   { path: 'forms', children: FormRoutes},
-  { path: 'componentdemo', children: ComponentsRoutes }
+  { path: 'componentdemo', children: ComponentsRoutes },
+  { path: 'backenddemo', children: BackendRoutes },
+  { path: 'routingdemo', children: RoutingDemoRoutes }
 ];
 
 @NgModule({
@@ -27,7 +31,9 @@ const routes: Routes = [
     PipesModule,
     AdminModule,
     FormsDemoModule,
-    ComponentsDemoModule
+    ComponentsDemoModule,
+    BackendModule,
+    RoutingDemoModule
   ],
   providers: [],
   bootstrap: [AppComponent]
