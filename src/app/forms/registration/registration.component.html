@@ -7,19 +7,21 @@
     [(ngModel)]="newUser.username" 
     name="username" 
     id="inputUsername" 
-    #username="ngModel" 
-    required >
-  <p *ngIf="username.isdirty && username.errors?.required">This field is required</p>
+    #username="ngModel"
+    [ngModelOptions]="{updateOn: 'blur'}" 
+    required
+    minlength="3" >
+  <p *ngIf="username.dirty && username.errors?.required">This field is required</p>
+  <p *ngIf="username.dirty && username.errors?.minlength">This field needs a minlength of 3</p>
 
   <label>Email:</label>
   <input type="email" #email="ngModel" name="email" [(ngModel)]="newUser.email" required >
-  <p *ngIf="email.isdirty && email.errors?.required">This field is required</p>
+  <p *ngIf="email.dirty && email.errors?.required">This field is required</p>
   
   <label>Password:</label>
   <input type="password" #password="ngModel" name="password" [(ngModel)]="newUser.password" required >  
-  <p *ngIf="password.isdirty && password.errors?.required ">This field is required</p>
+  <p *ngIf="password..dirty && password.errors?.required ">This field is required</p>
    
-  <button type="button" [disabled]="!registrationForm.valid" >Submit</button>
-  <button type="submit" [disabled]="!registrationForm.valid"  >Submit 2</button>
+  <button type="submit" [disabled]="!registrationForm.valid"  >Submit</button>
 
 </form>
