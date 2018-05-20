@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Router, Routes } from '@angular/router';
 
 import { PipesModule, routes as PipesRoutes } from './pipes/pipes.module';
+
 import { AdminModule, routes as AdminRoutes } from './admin/admin.module';
 import { FormsDemoModule, routes as FormRoutes  } from './forms/formsdemo.module';
 import { ComponentsDemoModule, routes as ComponentsRoutes } from './components/componentsdemo.module';

@@ -20,7 +20,7 @@
   
   <label>Password:</label>
   <input type="password" #password="ngModel" name="password" [(ngModel)]="newUser.password" required >  
-  <p *ngIf="password..dirty && password.errors?.required ">This field is required</p>
+  <p *ngIf="password.dirty && password.errors?.required ">This field is required</p>
    
   <button type="submit" [disabled]="!registrationForm.valid"  >Submit</button>
 

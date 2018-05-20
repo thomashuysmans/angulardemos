@@ -6,7 +6,12 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class AdminComponent implements OnInit {
-    constructor() { }
+
+    currentDate: Date;
+
+    constructor() { 
+        this.currentDate = new Date();
+    }
 
     ngOnInit() { }
 }

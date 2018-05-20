@@ -2,13 +2,17 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Router, Routes } from '@angular/router';
 import { AdminComponent } from './admin.component';
 
+import { BrowserModule } from '@angular/platform-browser';
+import { Browser } from 'protractor';
+
 export const routes: Routes = [
-    { path: 'Admin', component: AdminComponent},
+    { path: 'admin', component: AdminComponent},
 ];
 
 @NgModule({
     imports: [
-        RouterModule.forRoot(routes)
+        BrowserModule,
+        RouterModule.forChild(routes)
     ],
     exports: [AdminComponent],
     declarations: [AdminComponent],

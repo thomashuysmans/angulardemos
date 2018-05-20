@@ -3,6 +3,8 @@ import { Http, Response } from '@angular/http';
 
 import { SimpleHttpService } from '../simpleHttp.service';
 
+import { HttpClient } from '@angular/common/http';
+
 import 'rxjs/add/operator/map';
 
 @Component({
@@ -11,26 +13,33 @@ import 'rxjs/add/operator/map';
 })
 export class SimpleHTTPComponent {
   data: Object;
+
+  data2: Object;
   loading: boolean;
 
-  constructor(private http: Http, private simpleHttpService: SimpleHttpService) {
+  constructor(private http: Http, private simpleHttpService: SimpleHttpService, private httpClient: HttpClient) {
   }
 
   makeRequest2() {
     this.loading = true;
-    this.data = this.simpleHttpService.getRequest();
-
-    // const result = this.simpleHttpService.getPersonName();
-    // console.log("Persons name: " + result.Firstname + " " + result.Lastname);
+    this.data = this.simpleHttpService.getRequest().subscribe( (res: Response) => {
+      this.data = res.json();
+      this.loading = false;
+   });
   }
-
-
 
   makeRequest(): void {
     this.loading = true;
     this.http.request('http://jsonplaceholder.typicode.com/posts/1')
       .subscribe(  (res: Response) => {
         this.data = res.json();
+        this.loading = false;
+      });
+
+
+     this.httpClient.get('http://jsonplaceholder.typicode.com/posts/1')
+      .subscribe( (data: any) => {
+        this.data2 = data;
         this.loading = false;
       });
   }

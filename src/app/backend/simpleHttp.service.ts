@@ -16,10 +16,7 @@ export class SimpleHttpService {
     }
 
     getRequest(): any {
-        return this.http.request('http://jsonplaceholder.typicode.com/posts/1')
-           .subscribe( (data) => {
-              return data.json();
-           });
+        return this.http.request('http://jsonplaceholder.typicode.com/posts/1');
     }
 
     // makeRequest(): void {

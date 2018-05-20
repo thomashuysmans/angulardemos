@@ -11,7 +11,6 @@ export class RegistrationComponent implements OnInit, OnChanges {
   newUser: User;
 
   constructor() {
-    this.newUser = new User('', '', '');
    }
 
   submitUserRegistration(): void {
@@ -20,6 +19,7 @@ export class RegistrationComponent implements OnInit, OnChanges {
 
   ngOnInit() {
     console.log('in ngoninit');
+    this.newUser = new User('', '', '');
   }
 
   onCancel(): void {

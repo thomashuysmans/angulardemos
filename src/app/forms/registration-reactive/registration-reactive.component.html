@@ -4,6 +4,8 @@
   <div>
     <label>Username:</label>
     <input type="text" formControlName="username"> 
+    
+    
     <p *ngIf="registerForm.controls.username.dirty && registerForm.controls.username.errors?.required"  >This field is required</p>
     <p *ngIf="registerForm.controls.username.dirty && registerForm.controls.username.errors?.minlength"  >This field needs a minimum length of 2</p>
   </div>
@@ -11,6 +13,8 @@
    <div>
     <label>Email:</label>
     <input type="text" formControlName="email"> 
+    
+    
     <p *ngIf="registerForm.controls.email.dirty && registerForm.controls.email.errors?.required">
       This field is required</p>
   </div>
