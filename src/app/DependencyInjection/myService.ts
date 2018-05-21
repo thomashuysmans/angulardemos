@@ -1,13 +1,10 @@
 import { Injectable, Inject } from '@angular/core';
 
 
-export const API_URL: string = "http://www.google.com";
-
 @Injectable()
 export class MyService {
 
-    constructor(@Inject(API_URL) private apiUrl: string) {
-
+    constructor(@Inject('MyApiUrl') private apiUrl: string) {
     }
 
     getValue(): string {

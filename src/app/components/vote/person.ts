@@ -1,3 +1,4 @@
 export class Person{
-    constructor(Firstname:string, Lastname:string){}
+    constructor(Firstname: string, Lastname: string){
+    }
 }

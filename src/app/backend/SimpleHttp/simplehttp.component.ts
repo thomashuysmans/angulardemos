@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
 import { Http, Response } from '@angular/http';
-
 import { SimpleHttpService } from '../simpleHttp.service';
 
 import { HttpClient } from '@angular/common/http';
@@ -17,6 +16,7 @@ export class SimpleHTTPComponent {
   data2: Object;
   loading: boolean;
 
+  // Remark: Http is deprecated use the new HttpClient class. Http class is here just to show the difference
   constructor(private http: Http, private simpleHttpService: SimpleHttpService, private httpClient: HttpClient) {
   }
 
@@ -68,13 +68,3 @@ export class SimpleHTTPComponent {
       });
   }
 }
-
-  //, private simpleHttpService: SimpleHttpService
-  // makeRequest(): void {
-  //   this.loading = true;
-  //   this.http.request('http://jsonplaceholder.typicode.com/posts/1')
-  //     .subscribe((res: Response) => {
-  //       this.data = res.json();
-  //       this.loading = false;
-  //     });
-  // }

@@ -1,15 +1,16 @@
-import { Component, OnInit, OnChanges, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-registration-reactive',
   templateUrl: './registration-reactive.component.html'
 })
-export class RegistrationReactiveComponent implements OnChanges {
+export class RegistrationReactiveComponent {
 
  registerForm: FormGroup;
 
  constructor(private fb: FormBuilder) {
+  // This is the short form of declaring a Form. Remember you can't use the updateOn parameter.
   //  this.registerForm = fb.group({
   //    'username': ['', [Validators.required, Validators.minLength(2)]],
   //    'email': ['', Validators.required],
@@ -22,9 +23,6 @@ export class RegistrationReactiveComponent implements OnChanges {
       password: new FormControl('', [Validators.required])
     }, { updateOn: 'blur' });
 
-// blur
-// submit
-
    this.registerForm.valueChanges
       .map((value) => {
         value.username = value.username.toUpperCase();
@@ -35,10 +33,6 @@ export class RegistrationReactiveComponent implements OnChanges {
       .subscribe((value) => { // We are going to see every change when the form is valid
         console.log('Value changes: ' + JSON.stringify(value));
       });
-  }
-
-  ngOnChanges() {
-    console.log('in ngonchange');
   }
 
   onSubmit() {

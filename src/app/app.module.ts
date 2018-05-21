@@ -8,7 +8,6 @@ import { AdminModule, routes as AdminRoutes } from './admin/admin.module';
 import { FormsDemoModule, routes as FormRoutes  } from './forms/formsdemo.module';
 import { ComponentsDemoModule, routes as ComponentsRoutes } from './components/componentsdemo.module';
 import { BackendModule, routes as BackendRoutes } from './backend/backend.module';
-import { RoutingDemoModule, routes as RoutingDemoRoutes } from './routing/routingdemo.module';
 import { DiModule, routes as DiRoutes } from './DependencyInjection/di.module';
 import { ChangeDetectionModule, routes as ChangeDetectionRoutes } from './changedetection/changedetection.module';
 
@@ -22,7 +21,6 @@ const routes: Routes = [
   { path: 'forms', children: FormRoutes},
   { path: 'componentdemo', children: ComponentsRoutes },
   { path: 'backenddemo', children: BackendRoutes },
-  { path: 'routingdemo', children: RoutingDemoRoutes },
   { path: 'didemo', children: DiRoutes },
   { path: 'changedetection', children: ChangeDetectionRoutes }
 ];
@@ -39,7 +37,6 @@ const routes: Routes = [
     FormsDemoModule,
     ComponentsDemoModule,
     BackendModule,
-    RoutingDemoModule,
     DiModule,
     ChangeDetectionModule
   ],

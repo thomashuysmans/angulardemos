@@ -1,25 +1,23 @@
 <p>
-    Pipes demo
-  </p>
-  
+  Pipes demo
+</p>
+
+<!-- Date and currency examples -->
+
+<p>Date of today is {{ dateOfToday }}</p>
+
+<p>Date of today is {{ dateOfToday | date }}</p>
+<p>Date of today is {{ dateOfToday | date:"yyyy-MM-dd" }}</p>
+<p>Date of today is {{ dateOfToday | date:'fullDate' }}</p>
+<p>Date of today is {{ dateOfToday | date:'longDate' }}</p>
+
+
+<p>Amount is {{ amount | currency:'EUR' }}</p>
+<p>Amount is {{ amount | currency }}</p>
+
+
 <!-- Async pipe demo -->
 
 <div *ngFor="let contact of ('./assets/contacts.json' | contactsAsync )">
   {{ contact.FirstName | contactFilter | lowercase }}
-</div> 
-
-
-
-  <p>Date of today is {{ dateOfToday }}</p>
-  
-  <p>Date of today is {{ dateOfToday | date }}</p>
-  <p>Date of today is {{ dateOfToday | date:"yyyy-MM-dd" }}</p>
-  <p>Date of today is {{ dateOfToday | date:'fullDate' }}</p>
-  <p>Date of today is {{ dateOfToday | date:'longDate' }}</p>
-  
-  
-  <p>Amount is {{ amount | currency:'EUR' }}</p>
-  <p>Amount is {{ amount | currency }}</p>
-  
-
-  
+</div>

@@ -7,7 +7,9 @@ import { DiRootComponent } from './di-root.component';
 import { InvoiceComponent } from './invoice.component';
 import { HomeWithDiComponent } from './homeWithDi.component';
 import { HomeComponent } from './home.component';
-import { MyService, API_URL } from './myService';
+import { MyService } from './myService';
+import { API_URL } from './contants';
+
 
 export const routes: Routes = [
     { path: '', redirectTo: '/diroot', pathMatch: 'full' },
@@ -24,6 +26,7 @@ export const routes: Routes = [
     providers: [
         { provide: MyService, useClass: MyService },
         { provide: API_URL, useValue: 'http://www.google.com'  }, // providing a constant
+        { provide: 'MyApiUrl', useValue: 'http://www.google.com'  }, // providing a constant
         { provide: InvoiceService, useFactory: (): InvoiceService => new InvoiceService()  }, // Factory
     ],
 })
