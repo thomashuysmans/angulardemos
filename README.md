@@ -1,7 +1,7 @@
 # Angulardemos
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
-The Demos are made for Angular 5.
+The demos are made for Angular 5.
 
 ## Development server
 
